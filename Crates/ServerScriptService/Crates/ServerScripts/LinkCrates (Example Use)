@@ -1,0 +1,58 @@
+local serverScripts = game.ServerScriptService
+
+local Crates = serverScripts.Crates
+local Config = require(Crates.Config)
+local items = Config.Items
+local crates = Config.Crates
+local references = Config.References
+local crateRefs = references.Crates
+local getPrompt = references.GetPrompt
+local getRolls = references.GetRolls
+local getCrateType = references.GetCrateType
+local getPromptText = references.GetPromptText
+
+local Roller = require(Crates.Roller)
+
+if not (crateRefs and getPrompt and getRolls and getCrateType and getPromptText) then -- Checks if all of Config.References are set
+	warn("Not all references have been set")
+	return
+end
+
+local debounce = false
+
+for _,crate in crateRefs do
+	local prompt = getPrompt(crate)
+	local rolls = getRolls(crate)
+	local crateType = getCrateType(crate)
+	local promptText = getPromptText(crateType,rolls)
+	
+	local crateData = crates[crateType]
+	local chances = crateData.Chances
+	local info = crateData.Info
+		
+	prompt.ActionText = promptText
+	
+	prompt.Triggered:Connect(function()
+		if debounce then return end -- Prevents multiple rolls at once
+		debounce = true
+		
+		local rolls = Roller.Roll(chances,rolls)
+		
+		print(string.rep("-", 20))
+		
+		for _,roll in rolls do
+			print(string.rep("*", 20))
+			
+			task.wait(info.Pause)
+			print("You rolled "..roll.."!")
+			for data,value in items[roll] do -- Cycles through all the information about the item and displays it
+				print(data..": "..value)
+			end
+			
+			print(string.rep("*", 20))
+		end
+		
+		print(string.rep("-", 20))
+		debounce = false
+	end)
+end

@@ -1,0 +1,28 @@
+local Roller = {}
+	
+function Roller.Roll(weights,rolls)
+	local items = {}
+	local total = 0
+	
+	for _,weight in weights do
+		total += weight -- Gets the total sum of all weights
+	end
+	
+	for _ = 1,rolls do 
+		
+		local roll = math.random()*total -- Generate a random number between 0 and total weight to determine rolled item
+		local counter = 0
+		
+		for item,weight in weights do
+			counter += weight
+			if counter >= roll then -- Checks if the counter is over or equal to the roll
+				table.insert(items,item) -- Add the item to be returned
+				break
+			end
+		end
+	end
+	
+	return items
+end
+
+return Roller

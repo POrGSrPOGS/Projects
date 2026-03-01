@@ -1,0 +1,118 @@
+newmtl Handle1Mtl
+Material Color
+Ka 0.212044 0.212044 0.212044
+Kd 0.212044 0.212044 0.212044
+Ke 0 0 0
+Ks 0.0133047 0.0133047 0.0133047 
+
+d 1
+
+Ns 0
+
+newmtl Mediumpackage1Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+Ks 0.0627451 0.0627451 0.0627451 
+
+d 1
+
+Ns 0
+
+newmtl Spawnlocation2Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+Ks 0.0627451 0.0627451 0.0627451 
+
+d 1
+
+Ns 0
+
+map_Ka Spawnlocation2_diff.png
+map_Kd Spawnlocation2_diff.png
+map_d Spawnlocation2_diff.png
+
+newmtl Largepackage1Mtl
+Material Color
+Ka 0 0 0
+Kd 0 0 0
+Ke 0 0 0
+Ks 0 0 0 
+
+d 1
+
+Ns 0
+
+newmtl Handle4Mtl
+Material Color
+Ka 0.383775 0.315763 0
+Kd 0.383775 0.315763 0
+Ke 0 0 0
+Ks 0.02408 0.0198126 0 
+
+d 1
+
+Ns 0
+
+newmtl Smallpackage1Mtl
+Material Color
+Ka 0 0.000804658 0.573159
+Kd 0 0.000804658 0.573159
+Ke 0 0 0
+Ks 0 5.04884e-05 0.0359629 
+
+d 1
+
+Ns 0
+
+newmtl Handle7Mtl
+Material Color
+Ka 0.612066 0 5.69218e-05
+Kd 0.612066 0 5.69218e-05
+Ke 0 0 0
+Ks 0.0384041 0 3.57156e-06 
+
+d 1
+
+Ns 0
+
+newmtl Spawnlocation1Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ke 0 0 0
+Ks 0.0234425 0.0231273 0.02408 
+
+d 1
+
+Ns 0
+
+newmtl Baseplate1Mtl
+Material Color
+Ka 0.103634 0.103634 0.103634
+Kd 0.103634 0.103634 0.103634
+Ke 0 0 0
+Ks 0.00650253 0.00650253 0.00650253 
+
+d 1
+
+Ns 0
+
+newmtl Baseplate2Mtl
+Material Color
+Ka 0 0 0
+Kd 0 0 0
+Ke 0 0 0
+Ks 0 0 0 
+
+d 0.2
+
+Ns 0
+
+map_Ka Baseplate2_diff.png
+map_Kd Baseplate2_diff.png
+map_d Baseplate2_diff.png
+

@@ -1,0 +1,49 @@
+local Config = {}
+
+local crates = workspace.Crates
+
+Config.Items = {
+	Copper = {Rarity = "Common", Value = 10},
+	Coal = {Rarity = "Common", Value = 15},
+	Iron = {Rarity = "Uncommon", Value = 40},
+	Gold = {Rarity = "Rare", Value = 150},
+	Diamond = {Rarity = "Epic", Value = 1000},
+	Emerald = {Rarity = "Legendary", Value = 5000}
+}
+
+Config.Crates = {
+	OreCrate = {
+		Chances = {
+			Copper = 70,
+			Coal = 15,
+			Iron = 10,
+			Gold = 4.9,
+			Diamond = 0.1,
+			Emerald = 0.001,
+		},
+		Info = {
+			Pause = 1, --Time before item revealed
+		},
+	},
+}
+
+--Optional (Remove if not needed)
+Config.References = {
+	Crates = {
+		table.unpack(crates:GetChildren())
+	},
+	GetPrompt = function(crate) -- The path to the prompt from the crate instance
+		return crate.ProximityPrompt
+	end,
+	GetRolls = function(crate) -- The value of the Int Value Rolls within the crate
+		return crate.Rolls.Value
+	end,
+	GetCrateType = function(crate) -- Gets the name of the crate 
+		return crate.Crate.Value
+	end,
+	GetPromptText = function(crateType,rolls) -- Forms prompt text from the crate's name and the number of times they are opening the crate
+		return "Buy "..rolls.."X "..crateType.."s"
+	end,
+}
+
+return Config
